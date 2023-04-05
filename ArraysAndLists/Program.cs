@@ -10,15 +10,15 @@ namespace ArraysAndLists
             //TODO:
 
             // Create an int Array and populate numbers 1-10
-            var numbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+            int[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
             /* Create two Lists of type int.
              * Name one List "evens"
              * Name the other List "odds"
              */
 
-            var evens = new List<int>();
-            var odds = new List<int>();
+            List<int> evens = new List<int>();
+            List<int> odds = new List<int>();
 
             /* Using either a foreach or for loop,
              * nest an if statement to check to see
@@ -27,30 +27,15 @@ namespace ArraysAndLists
              * or the odds List
              */
 
-            for (int i = 0; i < numbers.Length; i++)
+            foreach (var item in array)
             {
-                if (numbers[i] % 2 == 0)
+                if (item % 2 == 0)
                 {
-                    evens.Add(numbers[i]);
+                    evens.Add(item);
                 }
                 else
                 {
-
-                    odds.Add(numbers[i]);
-                }
-            }
-
-            foreach (var num in numbers)
-            {
-                if (num % 2 == 0)
-                {
-                    evens.Add(num);
-                    Console.WriteLine($"{num} is absolutely an even number");
-                }
-                else
-                {
-                    odds.Add(num);
-                    Console.WriteLine($"{num} is definitely an odd number");
+                    odds.Add(item);
                 }
             }
 
@@ -59,16 +44,20 @@ namespace ArraysAndLists
              *
              * Try to be creative in your display
              */
-
-            foreach (var item in evens)
+            
+            for (int i = 0; i < evens.Count; i++)
             {
-                Console.WriteLine($"{item} is an even number");
+                Console.WriteLine($"{evens[i]} is an even number");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+
+            for (int i = 0; i < odds.Count; i++)
+            {
+                Console.WriteLine($"{odds[i]} is ArraysAndLists odd number");
             }
 
-            foreach (var oddNumber in odds)
-            {
-                Console.WriteLine($"{oddNumber} is def odd");
-            }
         }
+    
     }
 }
